@@ -1,0 +1,108 @@
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 25%, #fad0c4 50%, #a18cd1 75%, #fbc2eb 100%);
+            min-height: 100vh;
+            background-attachment: fixed;
+            color: #333;
+        }
+        .title {
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3, #ef5da8, #c792ea);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+        }
+        .date-card {
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+        }
+        .date-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            border-color: #ff7eb3;
+        }
+        .theme-option {
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            border: 3px solid transparent;
+        }
+        .theme-option:hover {
+            transform: scale(1.05);
+            border-color: #c792ea;
+        }
+        .theme-option.selected {
+            border: 3px solid #ff7eb3;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 126, 179, 0.4);
+        }
+        .heart {
+            animation: pulse 1.5s infinite;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            opacity: 0;
+            z-index: 1000;
+        }
+        .rainbow-btn {
+            background: linear-gradient(90deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb, #ff9a9e);
+            background-size: 400% 400%;
+            animation: gradient 5s ease infinite;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .rainbow-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .content-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            border-radius: 1rem;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .input-option {
+            transition: all 0.2s;
+            border: 2px solid #e2e8f0;
+        }
+        .input-option:hover {
+            border-color: #c792ea;
+            background-color: rgba(199, 146, 234, 0.1);
+        }
+        input[type="radio"]:checked + span,
+        input[type="checkbox"]:checked + span {
+            color: #ff7eb3;
+            font-weight: 600;
+        }
+        input[type="date"] {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            border: none;
+            color: white;
+            font-weight: 600;
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+        }

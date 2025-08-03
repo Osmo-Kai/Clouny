@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Date Invitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="title text-4xl md:text-5xl font-bold mb-2">Special Date Invitation</h1>
+            <p class="text-lg text-white font-medium mb-2 text-shadow">I'd love to take you on a special date! Help me plan the perfect one for us.</p>
+            <div class="heart text-5xl mt-2">❤️</div>
+        </header>
+
+        <!-- Main Content -->
+        <div id="main-content">
+            <!-- Welcome Screen -->
+            <div id="welcome-screen" class="content-card p-6 md:p-8 text-center">
+                <h2 class="title text-3xl font-bold mb-4">Hey Beautiful!</h2>
+                <p class="text-xl text-gray-700 mb-6">I've been thinking about spending some quality time with you. Would you like to go on a date with me?</p>
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <button id="yes-btn" class="rainbow-btn py-3 px-6 rounded-lg text-lg transition-all">Yes, I'd love to! ❤️</button>
+                    <button id="no-btn" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-3 px-6 rounded-lg text-lg transition-all">Let me think about it...</button>
+                </div>
+            </div>
+
+            <!-- Date Type Selection -->
+            <div id="date-type-screen" class="hidden">
+                <h2 class="title text-3xl font-bold text-center mb-6">What kind of date would you prefer?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="date-card rounded-lg shadow-lg overflow-hidden cursor-pointer" data-type="casual">
+                        <div class="h-40 bg-gradient-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
+                            <span class="text-6xl">👟</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Casual Date</h3>
+                            <p class="text-gray-600">Relaxed and comfortable. Perfect for just enjoying each other's company without any pressure.</p>
+                        </div>
+                    </div>
+                    <div class="date-card rounded-lg shadow-lg overflow-hidden cursor-pointer" data-type="formal">
+                        <div class="h-40 bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center">
+                            <span class="text-6xl">👗</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Formal Date</h3>
+                            <p class="text-gray-600">Elegant and sophisticated. Let's dress up and make it a special occasion to remember.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Theme Selection -->
+            <div id="theme-screen" class="hidden">
+                <h2 class="title text-3xl font-bold text-center mb-6">What theme sounds most appealing?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="theme-option rounded-lg shadow p-4 text-center cursor-pointer" data-theme="food">
+                        <div class="text-5xl mb-2" style="background: linear-gradient(to right, #ff9a9e, #fad0c4); -webkit-background-clip: text; background-clip: text; color: transparent;">🍽️</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Culinary Adventure</h3>
+                        <p class="text-gray-600 text-sm">Exploring new flavors together</p>
+                    </div>
+                    <div class="theme-option rounded-lg shadow p-4 text-center cursor-pointer" data-theme="adventure">
+                        <div class="text-5xl mb-2" style="background: linear-gradient(to right, #84fab0, #8fd3f4); -webkit-background-clip: text; background-clip: text; color: transparent;">🌄</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Outdoor Adventure</h3>
+                        <p class="text-gray-600 text-sm">Creating memories in nature</p>
+                    </div>
+                    <div class="theme-option rounded-lg shadow p-4 text-center cursor-pointer" data-theme="arts">
+                        <div class="text-5xl mb-2" style="background: linear-gradient(to right, #a18cd1, #fbc2eb); -webkit-background-clip: text; background-clip: text; color: transparent;">🎭</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Arts & Culture</h3>
+                        <p class="text-gray-600 text-sm">Museums, shows, or galleries</p>
+                    </div>
+                    <div class="theme-option rounded-lg shadow p-4 text-center cursor-pointer" data-theme="relaxation">
+                        <div class="text-5xl mb-2" style="background: linear-gradient(to right, #fbc2eb, #a6c1ee); -webkit-background-clip: text; background-clip: text; color: transparent;">🧘‍♀️</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Relaxation</h3>
+                        <p class="text-gray-600 text-sm">Unwinding and enjoying calm moments</p>
+                    </div>
+                    <div class="theme-option rounded-lg shadow p-4 text-center cursor-pointer" data-theme="romantic">
+                        <div class="text-5xl mb-2" style="background: linear-gradient(to right, #ff758c, #ff7eb3); -webkit-background-clip: text; background-clip: text; color: transparent;">💖</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Romantic</h3>
+                        <p class="text-gray-600 text-sm">Intimate and heartfelt connection</p>
+                    </div>
+                    <div class="theme-option rounded-lg shadow p-4 text-center cursor-pointer" data-theme="surprise">
+                        <div class="text-5xl mb-2" style="background: linear-gradient(to right, #f6d365, #fda085); -webkit-background-clip: text; background-clip: text; color: transparent;">🎁</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Surprise Me</h3>
+                        <p class="text-gray-600 text-sm">I trust your planning completely</p>
+                    </div>
+                </div>
+                <div class="mt-6 text-center">
+                    <button id="theme-next" class="rainbow-btn py-3 px-6 rounded-lg text-lg transition-all">Continue</button>
+                </div>
+            </div>
+
+            <!-- Additional Preferences -->
+            <div id="preferences-screen" class="hidden content-card p-6 md:p-8">
+                <h2 class="title text-3xl font-bold text-center mb-6">Any special preferences?</h2>
+                
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2">When would you prefer to go?</label>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <label class="input-option flex items-center p-3 rounded-lg cursor-pointer">
+                            <input type="radio" name="time" value="morning" class="mr-2 accent-pink-500">
+                            <span>Morning</span>
+                        </label>
+                        <label class="input-option flex items-center p-3 rounded-lg cursor-pointer">
+                            <input type="radio" name="time" value="afternoon" class="mr-2 accent-pink-500">
+                            <span>Afternoon</span>
+                        </label>
+                        <label class="input-option flex items-center p-3 rounded-lg cursor-pointer">
+                            <input type="radio" name="time" value="evening" class="mr-2 accent-pink-500">
+                            <span>Evening</span>
+                        </label>
+                        <label class="input-option flex items-center p-3 rounded-lg cursor-pointer">
+                            <input type="radio" name="time" value="night" class="mr-2 accent-pink-500">
+                            <span>Night</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2">Any dietary preferences?</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="input-option flex items-center p-3 rounded-lg cursor-pointer">
+                            <input type="checkbox" name="diet" value="vegetarian" class="mr-2 accent-pink-500">
+                            <span>Vegetarian</span>
+                        </label>
+                        <label class="input-option flex items-center p-3 rounded-lg cursor-pointer">
+                            <input type="checkbox" name="diet" value="vegan" class="mr-2 accent-pink-500">
+                            <span>Vegan</span>
+                        </label>
+                        <label class="input-option flex items-center p-3 rounded-lg cursor-pointer">
+                            <input type="checkbox" name="diet" value="gluten-free" class="mr-2 accent-pink-500">
+                            <span>Gluten-free</span>
+                        </label>
+                        <label class="input-option flex items-center p-3 rounded-lg cursor-pointer">
+                            <input type="checkbox" name="diet" value="no-restrictions" class="mr-2 accent-pink-500">
+                            <span>No restrictions</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="special-requests" class="block text-gray-700 font-semibold mb-2">Anything else you'd like me to know?</label>
+                    <textarea id="special-requests" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" rows="3" placeholder="Any special requests or things you'd like to avoid..." style="border: 2px solid #fbc2eb;"></textarea>
+                </div>
+                
+                <div class="text-center">
+                    <button id="submit-preferences" class="rainbow-btn py-3 px-8 rounded-lg text-lg transition-all">Plan Our Date!</button>
+                </div>
+            </div>
+
+            <!-- Final Screen -->
+            <div id="final-screen" class="hidden content-card p-6 md:p-8 text-center">
+                <div class="text-6xl mb-4" style="background: linear-gradient(to right, #ff758c, #ff7eb3, #ef5da8, #c792ea); -webkit-background-clip: text; background-clip: text; color: transparent;">🎉</div>
+                <h2 class="title text-3xl font-bold mb-4">It's a Date!</h2>
+                <div id="date-summary" class="text-lg text-gray-700 mb-6 p-4 rounded-lg" style="background: rgba(255,255,255,0.5);">
+                    <!-- Will be filled dynamically -->
+                </div>
+                <p class="text-xl font-medium mb-6" style="color: #ef5da8;">I can't wait to spend this special time with you!</p>
+                <div class="mb-6">
+                    <label for="date-picker" class="block text-gray-700 font-semibold mb-2">Choose a day that works for you:</label>
+                    <input type="date" id="date-picker" class="w-full md:w-64 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 mx-auto">
+                </div>
+                <button id="confirm-date" class="rainbow-btn py-3 px-8 rounded-lg text-lg transition-all">Confirm Our Date ❤️</button>
+            </div>
+
+            <!-- Confirmation Screen -->
+            <div id="confirmation-screen" class="hidden content-card p-6 md:p-8 text-center">
+                <div class="text-6xl mb-4" style="background: linear-gradient(to right, #ff758c, #ff7eb3, #ef5da8, #c792ea); -webkit-background-clip: text; background-clip: text; color: transparent;">💕</div>
+                <h2 class="title text-3xl font-bold mb-4">It's Official!</h2>
+                <div id="confirmation-message" class="text-xl text-gray-700 mb-6 p-4 rounded-lg" style="background: rgba(255,255,255,0.5);">
+                    <!-- Will be filled dynamically -->
+                </div>
+                <p class="text-lg font-medium mb-6" style="color: #ef5da8;">I'm looking forward to our time together!</p>
+                <div class="flex justify-center">
+                    <button id="restart-btn" class="bg-gradient-to-r from-purple-400 to-pink-500 hover:from-pink-500 hover:to-purple-400 text-white font-semibold py-2 px-4 rounded-lg text-lg transition-all">Plan Another Date</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+
+</body>
+</html>
+
+
+<!--This website is created to ask the girlI I like on a date, tho we are prohibted by her parents to talk and meet each other and is also her decision  . She's a girl that I met from the church. We use to have the same feeling for each other; however, herm parents won't allow her to enter on a relatinship. She's the oldest among their siblings; she's responsible for her sibling of course. I respect her and her parents that we should finish college firt before we get into a relationship. Which I respect—I also think that it would be better so that she can focus on her study and also mine.  She even created a paper that I need to sign. In the paper it talks about the deal that we to should make together. I should not visit her—her parents doesn't want me to visit at their house and so as for her brother, No communication, avoid eye contact and even seeing each other, and etc. I can only pursue her again after college and once she finally have a stable job, which I believe that would quite take some time to happen.  "If she's still single and available" I can court her again. Honestly,  I'm reluctant if I should still pursue her with that condition. I'm an honest gut towards my feeling, if I love the person I would tell her and make that person feel my affection. I can wait for years because I don't wanna waste my time entertaining other girls. But her condition that if she's still single that's only by the time that I can court her again. That only mean that there's a possibility that she'd loo for other guy, and I would be left along waiting that she still have a feeling for and hoping she won't try to look for other guy. I would degrade myself if I would accept that challenge, it's quite absurd. What's the point of waiting if the end point is not gonna be us. Love really is deceitful and blind—that's what the quote says. That you would do foolish things for the prosn tha you loveall. After a month goes by, I found my self contemplating. Asking and reflecting to my self. I ask myself what did she do to be even become worthy of me.  Most of use that perspective that love should hurt, that it can't be call a real love it doesn't hurt. We are given the idea that the love that hurts the most is the one that last. The kind of love that is being played in movies, theater, in television and the love that we the idea with is hurtful, imparted but the curated idea showed to us. Isn't love shold be gentle, the only that you should feel sadness if that becuse you miss the company of that person that you love, the time that we should feel anger is because we don't want the person that we love not to perish and get in any kind of trouble. 
